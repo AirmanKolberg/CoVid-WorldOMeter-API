@@ -1,0 +1,24 @@
+{
+  "name": "CoVid-WorldOMeter-API",
+  "version": "1.0.0",
+  "description": "This is an API I've developed to retrieve CoVid stats/data scraped from the near-constantly updating WorldOMeter database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AirmanKolberg/CoVid-WorldOMeter-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AirmanKolberg/CoVid-WorldOMeter-API/issues"
+  },
+  "homepage": "https://github.com/AirmanKolberg/CoVid-WorldOMeter-API#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "request": "^2.88.2"
+  }
+}
