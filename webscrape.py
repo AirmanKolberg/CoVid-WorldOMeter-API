@@ -2,6 +2,8 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 
+csv_file_name = 'coVidData.csv'
+
 
 def get_covid_data():
 
@@ -35,14 +37,16 @@ def get_covid_data():
         ],
     )
 
-    df.to_csv('coVidData.csv')
+    # Export data to .csv file
+    df.to_csv(csv_file_name)
 
     return df
 
 
+# This is an experimental algorithm
 def find_data_in_df(data_point):
     
-    df = pd.read_csv('coVidData.csv')
+    df = pd.read_csv(csv_file_name)
 
     searched_data = df[data_point]
 
