@@ -35,14 +35,14 @@ def get_covid_data():
         ],
     )
 
-    df.to_csv('myData.csv')
+    df.to_csv('coVidData.csv')
 
     return df
 
 
 def find_data_in_df(data_point):
     
-    df = pd.read_csv('myData.csv')
+    df = pd.read_csv('coVidData.csv')
 
     searched_data = df[data_point]
 
