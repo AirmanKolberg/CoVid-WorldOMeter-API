@@ -3,4 +3,5 @@ from webscrape import *
 
 if __name__ == '__main__':
 
-    print('this is for testing purposes...')
+    df = get_covid_data()
+    print(df)
