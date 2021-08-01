@@ -8,7 +8,8 @@ def get_covid_data():
     url = "https://www.worldometers.info/coronavirus/"
     soup = BeautifulSoup(requests.get(url).content, "html.parser")
 
-    all_data = []
+    all_data = list()
+
     for tr in soup.select("#main_table_countries_today tr:has(td)")[8:-8]:
         tds = [td.get_text(strip=True) for td in tr.select("td")][:15]
         all_data.append(tds)
@@ -49,6 +50,7 @@ def find_data_in_df(data_point):
         print(data)
 
 
+# Ensure this file cannot be independently called
 if __name__ == '__main__':
 
     pass
