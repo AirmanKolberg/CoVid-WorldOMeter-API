@@ -151,4 +151,3 @@ if __name__ == '__main__':
 
     dict_to_json(framework, 'CoVid-Data.json')
 
-    print(framework)
