@@ -44,12 +44,9 @@ def fill_country_list(df):
 
 def create_data_dict():
 
-    # Declare empty dictionary to fill with CoVid data
     framework = dict()
-
     all_data = list()
 
-    # Every 14 entries is a new country...
     for x in range(len(df)):
         for category in categories:
             this_section = str(df[category][x])
