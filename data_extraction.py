@@ -10,19 +10,19 @@ countries.
 class CoVidData:
 
     def __init__(self, 
-                 total_cases=0,
-                 new_cases=1,
-                 total_deaths=2,
-                 new_deaths=3,
-                 total_recovered=4,
-                 new_recovered=5,
-                 active_cases=6,
-                 serious_critical=7,
-                 total_cases_per_million=8,
-                 deaths_per_million=9,
-                 total_tests=10,
-                 test_per_million=11,
-                 population=12):
+                 total_cases='Total Cases',
+                 new_cases='New Cases',
+                 total_deaths='Total Deaths',
+                 new_deaths='New Deaths',
+                 total_recovered='Total Recovered',
+                 new_recovered='New Recovered',
+                 active_cases='Active Cases',
+                 serious_critical='Serious/Critical',
+                 total_cases_per_million='Total Cases Per Million',
+                 deaths_per_million='Deaths Per Million',
+                 total_tests='Total Tests',
+                 test_per_million='Tests Per Million',
+                 population='Population'):
         self.total_cases = total_cases
         self.new_cases = new_cases
         self.total_deaths = total_deaths
@@ -501,13 +501,6 @@ def get_framework_datapoint(country, data):
 
 
 if __name__ == '__main__':
-
-    """
-    This file was rendered inoperable after the
-    update to the .JSON data format.  Please
-    update this before you go to sleep, okay,
-    T.J.?  Okay- thank you, T.J.
-    """
 
     # This example is just a test...
     data = get_framework_datapoint(covid_countries.usa, data_points.population)
