@@ -1,15 +1,3 @@
-from _typeshed import SupportsReadline
-from functools import total_ordering
-from io import IncrementalNewlineDecoder
-from tkinter import CallWrapper
-from typing import ChainMap
-from PIL.Image import MAXCOVERAGE
-from bs4 import MarkupResemblesLocatorWarning
-from bs4.element import AttributeValueWithCharsetSubstitution, NavigableString
-from numpy import clongdouble, min_scalar_type
-from pandas.core.accessor import CachedAccessor
-from pyautogui import DARWIN_CATCH_UP_TIME, _couldNotImportPyMsgBox, locateAllOnScreen
-from pymsgbox import MONOSPACE_FONT_FAMILY, RUNNING_PYTHON_2
 from json_tools import json_to_dict
 
 """
@@ -392,7 +380,7 @@ class Countries:
         self.jamaica = jamaica
         self.malawi = malawi
         self.ivory_coast = ivory_coast
-        self.drc = DARWIN_CATCH_UP_TIME
+        self.drc = drc
         self.angola = angola
         self.madagascar = madagascar
         self.trinidad_and_tobago = trinidad_and_tobago
@@ -427,7 +415,7 @@ class Countries:
         self.curaao = curaao
         self.lesotho = lesotho
         self.burkina_faso = burkina_faso
-        self.congo = clongdouble
+        self.congo = congo
         self.hong_kong = hong_kong
         self.aruba = aruba
         self.djibouti = djibouti
@@ -495,7 +483,7 @@ class Countries:
         self.samoa = samoa
         self.saint_helena = saint_helena
         self.micronesia = micronesia
-        self.china = ChainMap
+        self.china = china
 
 
 # Create a data_points class object for each country's CoVid-19 data
