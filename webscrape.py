@@ -89,11 +89,20 @@ def create_data_dict():
             test_per_million = all_data.pop()
             population = all_data.pop()
 
-            framework[var] = [total_cases, new_cases, total_deaths, new_deaths,
-                              total_recovered, new_recovered, active_cases,
-                              serious_critical, total_cases_per_million,
-                              deaths_per_million, total_tests, test_per_million,
-                              population]
+            framework[var] = {'Total Cases': total_cases, 
+                              'New Cases': new_cases,
+                              'Total Deaths': total_deaths, 
+                              'New Deaths': new_deaths,
+                              'Total Recovered': total_recovered, 
+                              'New Recovered': new_recovered,
+                              'Active Cases': active_cases,
+                              'Serious/Critical': serious_critical, 
+                              'Total Cases Per Million': total_cases_per_million,
+                              'Deaths Per Million': deaths_per_million, 
+                              'Total Tests': total_tests,
+                              'Tests Per Million': test_per_million,
+                              'Population': population
+                              }
 
         else:
             print('\nERROR:\nSee create_data_dict() function for issues...\n\n')
