@@ -262,7 +262,8 @@ class Countries:
                  samoa='Samoa',
                  saint_helena='Saint Helena',
                  micronesia='Micronesia',
-                 china='China'):
+                 china='China',
+                 all='All'):
         self.usa = usa
         self.india = india
         self.brazil = brazil
@@ -485,17 +486,17 @@ class Countries:
         self.saint_helena = saint_helena
         self.micronesia = micronesia
         self.china = china
+        self.all = all
 
 
 # Create a data class object for each country's CoVid-19 data
-data = CoVidData()
-covid_countries = Countries()
+datapoint = CoVidData()
+countries = Countries()
 
 
-def get_framework_datapoint(country, data):
+def get_data(country, data):
 
     framework = json_to_dict('CoVid-Data.json')
-
     variable = framework[country][data]
 
     return variable
@@ -503,6 +504,4 @@ def get_framework_datapoint(country, data):
 
 if __name__ == '__main__':
 
-    # This example is just a test...
-    covid_data = get_framework_datapoint(covid_countries.usa, data.population)
-    print(covid_data)
+    pass
