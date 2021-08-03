@@ -486,8 +486,8 @@ class Countries:
         self.china = china
 
 
-# Create a data_points class object for each country's CoVid-19 data
-data_points = CoVidData()
+# Create a data class object for each country's CoVid-19 data
+data = CoVidData()
 covid_countries = Countries()
 
 
@@ -503,5 +503,5 @@ def get_framework_datapoint(country, data):
 if __name__ == '__main__':
 
     # This example is just a test...
-    data = get_framework_datapoint(covid_countries.usa, data_points.population)
-    print(data)
+    covid_data = get_framework_datapoint(covid_countries.usa, data.population)
+    print(covid_data)
