@@ -502,6 +502,13 @@ def get_framework_datapoint(country, data):
 
 if __name__ == '__main__':
 
+    """
+    This file was rendered inoperable after the
+    update to the .JSON data format.  Please
+    update this before you go to sleep, okay,
+    T.J.?  Okay- thank you, T.J.
+    """
+
     # This example is just a test...
     data = get_framework_datapoint(covid_countries.usa, data_points.population)
     print(data)
