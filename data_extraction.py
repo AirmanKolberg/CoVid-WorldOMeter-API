@@ -267,6 +267,8 @@ class Countries:
         self.india = india
         self.brazil = brazil
         self.russia = russia
+        self.runion = runion
+        self.dominica = dominica
         self.france = france
         self.uk = uk
         self.turkey = turkey
@@ -465,7 +467,6 @@ class Countries:
         self.saint_kitts_and_nevis = saint_kitts_and_nevis
         self.wallis_and_futuna = wallis_and_futuna
         self.brunei = brunei
-        self.dominica = dominican_republic
         self.grenada = grenada
         self.new_caledonia = new_caledonia
         self.greenland = greenland
