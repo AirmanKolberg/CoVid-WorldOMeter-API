@@ -1,3 +1,4 @@
+from os import system
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -150,4 +151,3 @@ if __name__ == '__main__':
     framework = create_data_dict()
 
     dict_to_json(framework, 'CoVid-Data.json')
-
