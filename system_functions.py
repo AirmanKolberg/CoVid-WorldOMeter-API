@@ -3,24 +3,20 @@ from time import sleep
 
 
 def bash_command(user_in):
-    
     _ = system(user_in)
 
 
 
 def clear_screen():
-
     bash_command('clear')
 
 
 def verify_yes_or_no(response):
 
     if response == 'yes' or response == 'y':
-
         return True
 
     elif response == 'no' or response == 'n':
-        
         return False
 
     else:
@@ -64,5 +60,5 @@ def countdown(seconds):
 
 
 if __name__ == '__main__':
-    
+
     pass
