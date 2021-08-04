@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 from json_tools import dict_to_json
-from system_functions import clear_screen, verify_yes_or_no, countdown
+from system_functions import clear_screen, verify_yes_or_no, countdown, bash_command
 
 """
 This file should be ran on the backend periodically
@@ -175,6 +175,9 @@ def monitor_covid_statistics(loop):
 
     # Export that beautiful dictionary as a .json file
     dict_to_json(framework, 'CoVid-Data.json')
+
+    # Share the results with the GitHub community
+    bash_command('python3 commit_and_push_all.py')
 
     if loop:
         
