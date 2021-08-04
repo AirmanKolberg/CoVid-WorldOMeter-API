@@ -32,7 +32,7 @@ categories = ['Country',
               'Population']
 
 
-def fill_country_list(df):
+def create_country_list(df):
 
     # Declare empty list of countries
     countries = list()
@@ -48,7 +48,7 @@ def fill_country_list(df):
     return countries
 
 
-def create_data_dict():
+def create_data_dict(df):
 
     framework = dict()
     all_data = list()
@@ -167,11 +167,18 @@ def monitor_covid_statistics(loop):
     # Import that data as a pd.df
     df = pd.read_csv('coVidData.csv')
 
-    # Build a list of available countries from that df
-    countries = fill_country_list(df)
+    """
+    The following countries variable currently does
+    not have a purpose, but this step will remain
+    here commented out until a later time at which
+    point I will decide to implement this feature.
+    """
+
+    # # Build a list of available countries from that df
+    # countries = create_country_list(df)
 
     # Put all of the data into a beautiful dictionary
-    framework = create_data_dict()
+    framework = create_data_dict(df)
 
     # Export that beautiful dictionary as a .json file
     dict_to_json(framework, 'CoVid-Data.json')
