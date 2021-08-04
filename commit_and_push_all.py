@@ -83,7 +83,6 @@ def delete_file(file_names, project_url):
     while file_names:
 
         this_file = file_names.pop()
-
         bash_command(f'git rm {this_file}')
         bash_command('git commit -m "deleted/renamed file"')
         bash_command(f'git push https://github.com/AirmanKolberg/CoVid-WorldOMeter-API.git')
