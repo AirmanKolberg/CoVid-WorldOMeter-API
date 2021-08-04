@@ -188,8 +188,8 @@ def monitor_covid_statistics(loop):
 
     if loop:
         
-        # Check again in an hour
-        countdown(3600)
+        # Check again in 30 minutes
+        countdown(1800)
         monitor_covid_statistics(loop=True)
 
 
