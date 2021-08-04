@@ -160,7 +160,7 @@ if __name__ == '__main__':
     # Import that data as a pd.df
     df = pd.read_csv('coVidData.csv')
 
-    # Build a list of available countries
+    # Build a list of available countries from that df
     countries = fill_country_list(df)
 
     # Put all of the data into a beautiful dictionary
