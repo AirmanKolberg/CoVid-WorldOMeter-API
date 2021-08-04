@@ -8,6 +8,9 @@ from json_tools import dict_to_json
 This file should be ran on the backend periodically
 throughout the day to gather more CoVid-19 data to
 post for the API's use and access.
+
+Note:  Make this file run as a continuous background
+process.
 """
 
 csv_file_name = 'coVidData.csv'
@@ -151,12 +154,16 @@ def get_covid_data():
 
 if __name__ == '__main__':
 
+    # Scrape new data from the web
     get_covid_data()
 
+    # Import that data as a pd.df
     df = pd.read_csv('coVidData.csv')
 
+    # Build a list of available countries
     countries = fill_country_list(df)
 
+    # Put all of the data into a beautiful dictionary
     framework = create_data_dict()
 
     dict_to_json(framework, 'CoVid-Data.json')
