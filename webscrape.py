@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 from json_tools import dict_to_json
-from system_functions import clear_screen
+from system_functions import clear_screen, verify_yes_or_no
 
 """
 This file should be ran on the backend periodically
@@ -186,4 +186,7 @@ def monitor_covid_statistics(loop):
 
 if __name__ == '__main__':
 
-    user_in = input()
+    clear_screen()
+
+    loop_response = verify_yes_or_no(input("Do you wish to scrape on a loop?\n").lower())
+    monitor_covid_statistics(loop=loop_response)
