@@ -166,4 +166,5 @@ if __name__ == '__main__':
     # Put all of the data into a beautiful dictionary
     framework = create_data_dict()
 
+    # Export this beautiful dictionary as a .json file
     dict_to_json(framework, 'CoVid-Data.json')
