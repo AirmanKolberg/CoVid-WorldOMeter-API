@@ -1,9 +1,8 @@
-from time import sleep
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 from json_tools import dict_to_json
-from system_functions import clear_screen, verify_yes_or_no
+from system_functions import clear_screen, verify_yes_or_no, countdown
 
 """
 This file should be ran on the backend periodically
@@ -180,7 +179,7 @@ def monitor_covid_statistics(loop):
     if loop:
         
         # Check again in an hour
-        sleep(3600)
+        countdown(3600)
         monitor_covid_statistics(loop=True)
 
 
