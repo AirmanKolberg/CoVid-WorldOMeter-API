@@ -38,9 +38,11 @@ def fill_country_list(df):
     countries = list()
 
     for x in range(len(df)):
+
         this_section = str(df['Country'][x])
         
         if this_section not in countries:
+
             countries.append(this_section)
 
     return countries
@@ -52,7 +54,9 @@ def create_data_dict():
     all_data = list()
 
     for x in range(len(df)):
+
         for category in categories:
+
             this_section = str(df[category][x])
 
             # Remove commas and +s from numbers
@@ -61,11 +65,15 @@ def create_data_dict():
 
             # Convert "nan"s to "0"
             if this_section == 'nan':
+
                 this_section = str(0)
             
             try:
+
                 this_section = int(this_section)
+
             except ValueError:
+
                 this_section = str(this_section)
 
             # str() = country, int() = other 13 data points
@@ -74,6 +82,7 @@ def create_data_dict():
     all_data.reverse()
 
     while all_data:
+
         var = all_data.pop()
         
         if isinstance(var, str):
@@ -108,7 +117,8 @@ def create_data_dict():
                               }
 
         else:
-            print('\nERROR:\nSee create_data_dict() function for issues...\n\n')
+
+            print('\nERROR:\nSee create_data_dict() function to troubleshoot issues...\n\n')
     
     return framework
 
@@ -122,29 +132,25 @@ def get_covid_data():
     all_data = list()
 
     for tr in soup.select("#main_table_countries_today tr:has(td)")[8:-8]:
+
         tds = [td.get_text(strip=True) for td in tr.select("td")][:15]
         all_data.append(tds)
 
-    df = pd.DataFrame(
-        all_data,
-        columns=[
-            "#",
-            "Country",
-            "Total Cases",
-            "New Cases",
-            "Total Deaths",
-            "New Deaths",
-            "Total Recovered",
-            "New Recovered",
-            "Active Cases",
-            "Serious, Critical",
-            "Tot Cases/1M pop",
-            "Deaths/1M pop",
-            "Total Tests",
-            "Tests/1M pop",
-            "Population",
-        ],
-    )
+    df = pd.DataFrame(all_data, columns=["#",
+                                         "Country",
+                                         "Total Cases",
+                                         "New Cases",
+                                         "Total Deaths",
+                                         "New Deaths",
+                                         "Total Recovered",
+                                         "New Recovered",
+                                         "Active Cases",
+                                         "Serious, Critical",
+                                         "Tot Cases/1M pop",
+                                         "Deaths/1M pop",
+                                         "Total Tests",
+                                         "Tests/1M pop",
+                                         "Population"])
 
     # Export data to .csv file
     df.to_csv(csv_file_name)
