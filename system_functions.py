@@ -27,7 +27,6 @@ def countdown(seconds):
     
     # Count down until 0 so that the last second is counted
     while seconds > -1:
-
         mins, secs = divmod(seconds, 60)
 
         # Setup grammar conditions for min/mins
