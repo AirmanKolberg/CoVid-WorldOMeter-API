@@ -1,8 +1,9 @@
-from os import system
+from time import sleep
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 from json_tools import dict_to_json
+from system_functions import clear_screen
 
 """
 This file should be ran on the backend periodically
@@ -158,7 +159,8 @@ def get_covid_data():
     return df
 
 
-if __name__ == '__main__':
+# Boolean value for loop
+def monitor_covid_statistics(loop):
 
     # Scrape new data from the web
     get_covid_data()
@@ -174,3 +176,14 @@ if __name__ == '__main__':
 
     # Export that beautiful dictionary as a .json file
     dict_to_json(framework, 'CoVid-Data.json')
+
+    if loop:
+        
+        # Check again in an hour
+        sleep(3600)
+        monitor_covid_statistics(loop=True)
+
+
+if __name__ == '__main__':
+
+    user_in = input()
